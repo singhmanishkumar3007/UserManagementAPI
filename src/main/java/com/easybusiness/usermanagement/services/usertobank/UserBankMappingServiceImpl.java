@@ -182,6 +182,7 @@ public class UserBankMappingServiceImpl implements UserBankMappingService {
 	userBankMapDTO.setModifiedBy(userBankEntity.getModifiedBy());
 	userBankMapDTO.setModifiedOn(userBankEntity.getModifiedOn());
 	userBankMapDTO.setUser(prepareUserDTO(userBankEntity.getUser()));
+	userBankMapDTO.setAccountType(userBankEntity.getAccountType());
 	return userBankMapDTO;
     }
 
@@ -221,6 +222,7 @@ public class UserBankMappingServiceImpl implements UserBankMappingService {
 	userBankMapEntity.setIfscCode(userBankMapDTO.getIfscCode());
 	userBankMapEntity.setModifiedBy(userBankMapDTO.getModifiedBy());
 	userBankMapEntity.setModifiedOn(userBankMapDTO.getModifiedOn());
+	userBankMapEntity.setAccountType(userBankMapDTO.getAccountType());
 	User user = userDao.findUserById(userBankMapDTO.getUser().getId());
 	userBankMapEntity.setUser(user);
 	userBankDao.addUserBankMap(userBankMapEntity);
